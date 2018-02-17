@@ -4,12 +4,14 @@ html{
 }
 body{
   font-family:  "Helvetica";
-    line-height: 1.4;
+  line-height: 1.4;
 }
 .container{
   width:960px;
   margin: 0 auto;
 }
+
+/* Banner Section */
 .mainBanner{
   background-image: url('../images/glasses-banner.png');
   height: 31rem;
@@ -36,12 +38,14 @@ body{
   height: 1.5rem;
 }
 
-.navMenu{
+.navMenu,
+.mobileMenu{
 margin-left: auto;
 }
 
-.navMenu span{
-    font-size: 1rem;
+.navMenu span,
+.mobileMenu span{
+  font-size: 1rem;
   margin-left: 1rem;
 }
 
@@ -52,21 +56,75 @@ margin-left: auto;
   left: 2rem;
   background-color: white;
   padding: 1.5rem 5rem;
-  width: 50%;
-
-}
-
-.altBanner span{
+  line-height: 1.2;
   font-size: 2rem;
   font-family:  "Helvetica";
   font-weight: bold;
-  line-height: 1.2;
+
 }
+.mobileMenu{
+   display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .container{
+    width:100%;
+  }
+  .mainBanner{
+    height: 22rem;
+    width:100%;
+   margin: 0 auto;
+  }
+  .navBar{
+    top:0;
+  }
+  .altBanner{
+    top:5rem;
+    padding: .75rem 4rem;
+    left: -2rem;
+    font-size: 1.33rem;
+  }
+}
+
+
+@media only screen and (max-width: 470px) {
+
+
+  .mainBanner{
+    height: 17rem;
+    background-position: 20%;
+  }
+  .navBar{
+    top:0;
+  }
+  .altBanner{
+    padding: 1rem auto;
+    text-align: center;
+    width: 100%;
+    font-size: 1rem;
+    top:9rem;
+    left: 0;
+  }
+  .mobileMenu{
+     display: block;
+  }
+
+  .navMenu{
+    display: none;
+  }
+  #opticsTitle{
+    display: none;
+  }
+
+}
+
+/* Icon Section */
 
 .iconSection{
   margin: 3rem auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   vertical-align: top;
   width: 50%;
 }
@@ -86,4 +144,82 @@ margin-left: auto;
 
 .paperImage{
   width: 3.5rem;
+}
+
+
+@media only screen and (max-width: 470px) {
+  .iconSection{
+    flex-direction: column;
+    margin-top: 3.77rem;
+  }
+  .iconColumn{
+    margin-bottom: 1.54rem;
+    padding-left: 4rem;
+  }
+  .iconColumn span{
+    font-family: Helvetica;
+    font-size: 0.77rem;
+  }
+
+}
+/*Business Info Section*/
+.businessInfo{
+  display: flex;
+  justify-content: center;
+}
+.infoColumnsA, .infoColumnsB{
+  width: 35%;
+}
+.infoColumnsA{
+  margin: 0 2.5% 5rem 0;
+}
+.infoColumnsB{
+  margin: 0 0 5rem 2.5%;
+}
+.infoColumnsA span,
+.infoColumnsB span{
+  display:block;
+  color: white;
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 10rem;
+  background-color: cadetblue;
+  padding: 0.5rem 1.25rem 0.5rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 470px) {
+  .businessInfo{
+    flex-direction: column;
+  }
+  .infoColumnsA, .infoColumnsB{
+    width: 100%;
+  }
+  .infoColumnsA span,
+  .infoColumnsB span{
+    text-align: center;
+    padding: 0.5rem 0;
+    width: 100%;
+    margin: 0 0 1rem 0;
+  }
+  .infoColumnsA,
+  .infoColumnsB{
+    margin: 0 0 4rem 0;
+  }
+.businessInfo div p{
+  font-family: Helvetica;
+  font-size: 0.77rem;
+}
+}
+
+footer {
+  display: flex;
+  background-color:azure;
+  padding: 4rem  0 4rem 4rem;
+}
+
+footer img{
+  height: 1.5rem;
+  margin-right:1rem;
 }
